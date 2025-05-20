@@ -1,5 +1,5 @@
-import Button from './components/UI/Button';
-import { currencyFormatter } from './util/formatting';
+import Button from '../components/UI/Button';
+import { currencyFormatter } from '../util/formatting';
 
 export default function MealItem({ meal }) {
   return (
