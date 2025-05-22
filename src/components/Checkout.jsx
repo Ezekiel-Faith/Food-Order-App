@@ -19,9 +19,16 @@ export default function Checkout() {
     userProgressCtx.hideCheckout();
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const fd = new FormData();
+    const customerData = Object.fromEntries(fd.entries()); // {email: test@emaple.com}
+  }
+
   return (
     <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleClose}>
-      <form action=''>
+      <form onSubmit={handleSubmit}>
         <h2>Checkout</h2>
         <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
         <Input label='Full Name' type='text' id='full-name' />
